@@ -2,7 +2,7 @@
 %global with_tests  %{?_with_tests:1}%{!?_with_tests:0}
 %global pecl_name memcached
 %global real_name php-pecl-memcached
-%global php_base php55u
+%global php_base php56u
 # After 40-igbinary, 40-json
 %global ini_name  50-%{pecl_name}.ini
 
@@ -21,7 +21,11 @@ BuildRequires: %{php_base}-pecl-jsonc-devel
 BuildRequires: %{php_base}-pecl-igbinary-devel
 #BuildRequires: libevent-devel  > 2
 BuildRequires: libevent-devel
+%if 0%{?rhel} >= 7
+BuildRequires: libmemcached-devel
+%else
 BuildRequires: libmemcached10-devel >= 1.0.13
+%endif
 BuildRequires: zlib-devel
 BuildRequires: cyrus-sasl-devel
 %if %{with_tests}
