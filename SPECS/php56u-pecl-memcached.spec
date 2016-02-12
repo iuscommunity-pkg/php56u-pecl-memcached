@@ -284,6 +284,6 @@ exit $ret
 * Sat Jun 27 2009 Remi Collet <fedora@famillecollet.com> - 0.2.0-1
 - Update to 0.2.0 + Patch for HAVE_JSON constant
 
-* Sun Apr 29 2009 Remi Collet <fedora@famillecollet.com> - 0.1.5-1
+* Wed Apr 29 2009 Remi Collet <fedora@famillecollet.com> - 0.1.5-1
 - Initial RPM
 
