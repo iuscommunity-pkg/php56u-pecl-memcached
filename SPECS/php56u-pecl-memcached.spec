@@ -76,7 +76,7 @@ It also provides a session handler (memcached).
 
 mv %{pecl_name}-%{version}%{?prever} NTS
 
-# Chech version as upstream often forget to update this
+# Check version as upstream often forget to update this
 extver=$(sed -n '/#define PHP_MEMCACHED_VERSION/{s/.* "//;s/".*$//;p}' NTS/php_memcached.h)
 if test "x${extver}" != "x%{version}"; then
    : Error: Upstream HTTP version is now ${extver}, expecting %{version}.
