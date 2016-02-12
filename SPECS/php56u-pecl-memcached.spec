@@ -1,10 +1,10 @@
 %global with_zts    0%{?__ztsphp:1}
 %global with_tests  %{?_with_tests:1}%{!?_with_tests:0}
-%global pecl_name memcached
-%global real_name php-pecl-memcached
-%global php_base php56u
+%global pecl_name   memcached
+%global real_name   php-pecl-memcached
+%global php_base    php56u
 # After 40-igbinary, 40-json
-%global ini_name  50-%{pecl_name}.ini
+%global ini_name    50-%{pecl_name}.ini
 
 Summary:      Extension to work with the Memcached caching daemon
 Name:         %{php_base}-pecl-%{pecl_name}
