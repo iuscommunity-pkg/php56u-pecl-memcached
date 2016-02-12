@@ -74,7 +74,7 @@ It also provides a session handler (memcached).
 %prep
 %setup -c -q
 
-mv %{pecl_name}-%{version}%{?prever} NTS
+mv %{pecl_name}-%{version} NTS
 
 # Check version as upstream often forget to update this
 extver=$(sed -n '/#define PHP_MEMCACHED_VERSION/{s/.* "//;s/".*$//;p}' NTS/php_memcached.h)
