@@ -9,7 +9,7 @@
 Summary:      Extension to work with the Memcached caching daemon
 Name:         %{php_base}-pecl-%{pecl_name}
 Version:      2.2.0
-Release:      4.ius%{?dist}
+Release:      5.ius%{?dist}
 # memcached is PHP, FastLZ is MIT
 License:      PHP and MIT
 Group:        Development/Languages
@@ -21,10 +21,10 @@ BuildRequires: %{php_base}-pecl-jsonc-devel
 BuildRequires: %{php_base}-pecl-igbinary-devel
 #BuildRequires: libevent-devel  > 2
 BuildRequires: libevent-devel
-%if 0%{?rhel} >= 7
-BuildRequires: libmemcached-devel
+%if 0%{?rhel} && 0%{?rhel} < 7
+BuildRequires: libmemcached10-devel >= 1.0.10
 %else
-BuildRequires: libmemcached10-devel >= 1.0.13
+BuildRequires: libmemcached-devel >= 1.0.10
 %endif
 BuildRequires: zlib-devel
 BuildRequires: cyrus-sasl-devel
@@ -237,6 +237,10 @@ exit $ret
 
 
 %changelog
+* Fri Feb 12 2016 Carl George <carl.george@rackspace.com> - 2.2.0-5.ius
+- Change minimum libmemcached version to 1.0.10 (upstream GH#25)
+- Clean up libmemcached build requirement logic
+
 * Mon Oct 27 2014 Ben Harper <ben.harper@rackspace.com> - 2.2.0-4.ius
 - porting from php55u-pecl-memcached
 
