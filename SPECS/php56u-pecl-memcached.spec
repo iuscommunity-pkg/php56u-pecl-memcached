@@ -9,7 +9,7 @@
 Summary:      Extension to work with the Memcached caching daemon
 Name:         %{php_base}-pecl-%{pecl_name}
 Version:      2.2.0
-Release:      5.ius%{?dist}
+Release:      6.ius%{?dist}
 # memcached is PHP, FastLZ is MIT
 License:      PHP and MIT
 Group:        Development/Languages
