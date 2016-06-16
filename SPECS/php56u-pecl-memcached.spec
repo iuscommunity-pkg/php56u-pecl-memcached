@@ -53,11 +53,10 @@ Provides:     %{php_base}-pecl(%{pecl_name})%{?_isa} = %{version}
 Provides: %{real_name} = %{version}
 Conflicts: %{real_name} < %{version}
 
-%if 0%{?fedora} < 20 && 0%{?rhel} < 7
-# Filter private shared
+# RPM 4.8
 %{?filter_provides_in: %filter_provides_in %{_libdir}/.*\.so$}
+%{?filter_provides_in: %filter_provides_in %{php_ztsextdir}/.*\.so$}
 %{?filter_setup}
-%endif
 
 
 %description
@@ -238,6 +237,9 @@ exit $ret
 
 
 %changelog
+* Thu Jun 16 2016 Ben Harper <ben.harper@rackspace.com> - 2.2.0-6.ius
+- update filters to include zts
+
 * Fri Feb 12 2016 Carl George <carl.george@rackspace.com> - 2.2.0-5.ius
 - Change minimum libmemcached version to 1.0.10 (upstream GH#25)
 - Clean up libmemcached build requirement logic
